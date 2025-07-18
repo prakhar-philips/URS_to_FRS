@@ -1,23 +1,24 @@
-# Seperate Generator
+# URS to FRS Converter
 
 ## Overview
-This project is designed to automate the generation of validation documents using advanced NLP techniques. It leverages BERT for text embedding, FAISS for similarity search, and a classifier to predict document types. The project includes a backend (Python) and a Streamlit-based frontend for user interaction.
+This project automates the conversion of User Requirement Specifications (URS) into Functional Requirement Specifications (FRS) using advanced NLP techniques. It is designed to streamline the requirements engineering process by leveraging language models and similarity search to generate high-quality FRS documents from URS inputs.
 
 ## Features
-- Upload and process validation documents
-- Text preprocessing and embedding using BERT
-- Similarity search with FAISS
-- Document type prediction
-- PDF export functionality
-- Modular backend structure
+- Upload and parse URS documents
+- Extract and preprocess requirements
+- Use BERT for text embedding
+- Perform similarity search with FAISS
+- Classify and map URS to FRS
+- Export generated FRS as PDF
+- Modular backend and Streamlit-based frontend
 
 ## Project Structure
 ```
 backend/
-  ├── main.py                # Entry point for backend API
-  ├── models/                # Data models
+  ├── main.py                # Backend API entry point
+  ├── models/                # Data models for URS/FRS
   ├── routers/               # API route definitions
-  ├── services/              # Core logic and utilities
+  ├── services/              # Core logic: parsing, generation, export
   └── tests/                 # Backend tests
 frontend_streamlit.py        # Streamlit frontend app
 docs/                        # Documentation and diagrams
@@ -48,8 +49,9 @@ docs/                        # Documentation and diagrams
    ```
 
 ## Usage
-- Access the Streamlit app in your browser to upload and process documents.
-- The backend API handles document parsing, embedding, similarity search, and classification.
+- Use the Streamlit app to upload URS documents and generate FRS outputs.
+- The backend handles document parsing, embedding, similarity search, and FRS generation.
+- Export the generated FRS as a PDF for documentation or review.
 
 ## Documentation
 - See the `docs/` folder for workflow diagrams and additional documentation.
