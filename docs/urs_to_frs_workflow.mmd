@@ -1,0 +1,20 @@
+flowchart TD
+    A["User uploads URS PDF & prompt<br/>via Streamlit frontend"] --> B["Frontend sends PDF & prompt<br/>to FastAPI backend (/api/frs/generate)"]
+    B --> C["PDF Parsing<br/>(PyMuPDF):<br/>Extracts structured URS items"]
+    C --> D["Prompt Enhancement<br/>(Prompt Modifier):<br/>Combines prompt & URS items"]
+    D --> E["FRS Generation<br/>(Together.ai LLM):<br/>Generates FRS items<br/>with traceability"]
+    E --> F["PDF Export<br/>(FPDF):<br/>Creates professional FRS PDF<br/>with tables, revision history,<br/>Philips logo"]
+    F --> G["Backend returns FRS PDF<br/>to frontend"]
+    G --> H["User downloads FRS PDF<br/>from Streamlit frontend"]
+
+    subgraph TechStack
+      I1["Streamlit (Frontend)"]
+      I2["FastAPI (Backend)"]
+      I3["PyMuPDF (PDF Parsing)"]
+      I4["FPDF (PDF Generation)"]
+      I5["Together.ai LLM API"]
+      I6["python-dotenv (Config)"]
+      I7["python-multipart (Uploads)"]
+    end
+
+    style TechStack fill:#f9f,stroke:#333,stroke-width:1px 

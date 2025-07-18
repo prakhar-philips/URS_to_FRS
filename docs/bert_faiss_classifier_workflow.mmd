@@ -1,0 +1,14 @@
+flowchart TD
+    A["User uploads validation document"] --> B["Text Preprocessing"]
+    B --> C["BERT Embedding<br/>(Transform text to vector)"]
+    C --> D["FAISS Similarity Search<br/>(Find closest match in DB)"]
+    D --> E["Classifier predicts<br/>document type/identity"]
+    E --> F["Return predicted validation document type<br/>to user"]
+
+    subgraph TechStack
+      I1["BERT (Embedding)"]
+      I2["FAISS (Similarity Search)"]
+      I3["Classifier Logic"]
+    end
+
+    style TechStack fill:#f9f,stroke:#333,stroke-width:1px 
